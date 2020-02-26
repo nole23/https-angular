@@ -13,14 +13,16 @@ export class AppComponent implements OnInit {
   constructor() {  }
 
   ngOnInit() {
-    this.lat = 52.1961472;
-    this.lng = 20.9813504;
-    // if (navigator) {
-    //   navigator.geolocation.getCurrentPosition(pos => {
-    //     this.lng = +pos.coords.longitude;
-    //     this.lat = +pos.coords.latitude;
-    //   });
-    // }
+    // this.lat = 52.1961472;
+    // this.lng = 20.9813504;
+    if (navigator) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        console.log(pos.coords.longitude)
+        console.log(pos.coords.latitude)
+        this.lng = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+      });
+    }
   }
 
 }
