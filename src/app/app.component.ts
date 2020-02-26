@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
 
   openMap() {
     
-    fetch('http://nominatim.openstreetmap.org/reverse?format=json&lon=' + this.lng + '&lat=' + this.lat)
+    fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + this.lng + '&lat=' + this.lat)
       .then(res => {
         console.log(res)
       })
