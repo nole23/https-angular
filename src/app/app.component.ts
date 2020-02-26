@@ -64,6 +64,11 @@ export class AppComponent implements OnInit {
   }
 
   openMap() {
+    
+    fetch('http://nominatim.openstreetmap.org/reverse?format=json&lon=' + this.lng + '&lat=' + this.lat)
+      .then(res => {
+        console.log(res)
+      })
     console.log('stt');
     this.source = new OlXYZ({
       url: 'http://tile.osm.org/{z}/{x}/{y}.png'
